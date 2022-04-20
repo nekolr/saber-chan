@@ -10,6 +10,7 @@
         v-model:current="queryParams.page"
         :show-total="total => `共 ${total} 条`"
         show-quick-jumper
+        :show-size-changer="false"
         @change="getImages"
         :styles="pageStyle"
       />
