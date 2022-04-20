@@ -6,6 +6,7 @@
           <a-input
             v-model:value="modelRef.username"
             :placeholder="t('user.inputUsername')"
+            @pressEnter="handleLogin"
           >
             <template #prefix>
               <UserOutlined />
@@ -17,6 +18,7 @@
           <a-input-password
             v-model:value="modelRef.password"
             :placeholder="t('user.inputPassword')"
+            @pressEnter="handleLogin"
           >
             <template #prefix>
               <LockOutlined />
