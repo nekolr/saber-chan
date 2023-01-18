@@ -28,7 +28,7 @@
 <script>
 import vueFilePond, { setOptions } from "vue-filepond";
 import { mapMutations } from "vuex";
-import cookies from "@/utils/cookies";
+import { getToken } from "@/utils/token";
 
 import "filepond/dist/filepond.min.css";
 import "filepond-plugin-image-preview/dist/filepond-plugin-image-preview.css";
@@ -64,7 +64,7 @@ export default {
           method: "POST",
           withCredentials: false,
           headers: {
-            Authorization: "Bearer " + cookies.get("token"),
+            Authorization: "Bearer " + getToken(),
           },
         },
       },

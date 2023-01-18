@@ -1,4 +1,4 @@
-import cookies from '@/utils/cookies'
+import { setToken, removeToken } from '@/utils/token'
 import router from '@/router'
 import { Modal } from 'ant-design-vue'
 import i18n from '@/i18n'
@@ -13,7 +13,7 @@ export default {
      */
     login({ commit }, response) {
       return new Promise(resolve => {
-        cookies.set('token', response.token)
+        setToken(response.token)
         // 填充 vuex 用户信息
         commit('user/set', response.user, { root: true })
         // 结束
@@ -32,7 +32,7 @@ export default {
        */
       async function logout() {
         // 删除cookie
-        cookies.remove('token')
+        removeToken()
         // 清空 vuex 用户信息
         commit('user/set', {}, { root: true })
         // 跳转路由

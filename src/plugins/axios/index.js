@@ -1,6 +1,6 @@
 import axios from 'axios'
 import store from '@/store'
-import cookies from '@/utils/cookies'
+import { getToken } from '@/utils/token'
 import { message } from 'ant-design-vue'
 import i18n from '@/i18n'
 
@@ -30,7 +30,7 @@ service.interceptors.request.use(
     // 如果是登录请求，则不需要加上 Token
     if (config.url.substring(config.baseURL) !== LOGIN_URI) {
       // 在请求发送之前做一些处理
-      const token = cookies.get('token')
+      const token = getToken()
       // 让每个请求携带 token-- ['Authorization'] 为自定义 key 请根据实际情况自行修改
       config.headers['Authorization'] = TOKEN_PREFIX + token
     }
