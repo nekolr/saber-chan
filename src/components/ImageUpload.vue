@@ -18,7 +18,7 @@
       :label-max-file-size="$t('upload.maxFileSize')"
       :max-file-size="10 * 1024 * 1024"
       allow-multiple="true"
-      accepted-file-types="image/jpeg, image/png, image/gif, image/svg+xml"
+      accepted-file-types="image/jpeg, image/png, image/gif, image/svg+xml, image/webp"
       v-bind:files="files"
       v-on:processfile="handleProcessFile"
     />
