@@ -59,7 +59,7 @@ export default {
         .getImages(this.queryParams)
         .then((res) => {
           this.imageList = res.content;
-          this.totalSize = res.totalElements;
+          this.totalSize = res.page.totalElements;
         })
         .catch(() => {});
     },
